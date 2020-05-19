@@ -1,0 +1,15 @@
+client.query('SELECT * FROM chats').then(res => {
+
+    const data = res.rows;
+    tech.to(sessionID).emit('history', `test`);
+
+    console.log('all data');
+    data.forEach(row => {
+        console.log(`Id: ${row.id} Name: ${row.name} Price: ${row.price}`);
+    })
+
+  
+
+}).finally(() => {
+    client.end()
+});
