@@ -4,9 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js --exec babel-node -e js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-    ,"export_ad" : "nodemon ./export.js --exec babel-node -e js"
+    "start": "nodemon ./index.js --exec",
+    "start-dev": "nodemon ./index.js --exec babel-node -e js",
+
+
+
+
+
+
+    "export_ad" : "nodemon ./export.js --exec babel-node -e js",
+
   },
   "author": "Joey",
   "license": "ISC",
