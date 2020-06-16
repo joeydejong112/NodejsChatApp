@@ -22,7 +22,7 @@ const pool = new Pool({
     host: process.env.SQL_HOST,
     database: process.env.SQL_DATABASE,
     password: process.env.SQL_PASSWORD,
-    port: process.env.PORT,
+    port: process.env.SQL_PORT,
 })
 
 
