@@ -12,7 +12,7 @@
 
 
 
-    "export_ad" : "nodemon ./export.js --exec babel-node -e js"
+    "export_ad" : "nodemon ./export.js"
 
   },
   "author": "Joey",

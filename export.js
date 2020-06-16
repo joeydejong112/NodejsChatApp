@@ -54,11 +54,11 @@
       Client
   } = require('pg')
   const pool = new Pool({
-      user: 'postgres',
-      host: 'localhost',
-      database: 'chat',
-      password: 'joeydejong12',
-      port: 5432,
+   user: process.env.SQL_USER ,
+   host: process.env.SQL_HOST,
+   database: process.env.SQL_DATABASE,
+   password: process.env.SQL_PASSWORD,
+   port: process.env.SQL_PORT,
   })
 
 pool.query("CREATE TABLE chats_test2 (id SERIAL, username VARCHAR(255) , message VARCHAR(255),  room VARCHAR(255) , tijd TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)", (err, res) => {
