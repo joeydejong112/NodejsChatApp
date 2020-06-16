@@ -5,7 +5,7 @@
   <title>Chatter</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
     integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -17,8 +17,8 @@
 
     <div class="top-balk">
       <div class="align-info">
-        <h1><%= room %></h1>
-        <p id="test"><%= username %></p>
+        <h1>Home</h1>
+        <h1><%= username %></h1>
         <ul id="join"></ul>
       </div>
     </div>
@@ -28,19 +28,45 @@
         <ul id="messages"></ul>
 
       </div>
-  <form action="">
-      <div class="input-group">
-        <input id="m" autocomplete="off" type="text" class="form-control" placeholder="Message..."
-          aria-label="Message...">
-          <input type="hidden" id="user" value="<%= username %>">
-        <span class="input-group-btn">
-          <button class="btn btn-secondary" type="submit">Send</button>
-        </span>
-      </div>
-    </form>
+ 
     </div>
   
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
@@ -54,13 +80,12 @@
 
 
 
-    const room = '<%= room %>';
+    const room = 'homepage';
 
-    const socket = io('/room');
-
+    const socket = io('/homepage');
+    
     $('form').submit(() => {
-      let msg = $('#m').val();
-      let username = $('#user').val();
+      let username = $('#doekrle').val();
       var socketConnection = io.connect();
       socketConnection.on('connect', function () {
         const sessionID = socketConnection.socket.sessionid;
@@ -69,44 +94,30 @@
 
       socket.emit('message', {
         msg,
-        room,
-        username
+        room
       });
-      $('#m').val('');
-      return false;
+     
+
     });
 
     socket.on('connect', () => {
 
       //socket id
-
-
-
-
-
       socket.emit('join', {
         room: room
       });
     })
-
-    socket.on('doei', (msg) => {
-      $('#join').append(msg + "<br>");
-
-
+    socket.on('username', (room) => {
+        $('#messages').append("<a href='room/"+ room + "'><li> <p class='username'></p> <p class='message' > "+ room +"</p></li></a>");
 
     })
+   
     // chat history on socket session
-    socket.on('history', (username , message) => {
-      // $('#messages').append($('<li class="">').text(username));
-        $('#messages').append("<li> <p class='username'>"+ username +"</p> <p class='message' > "+ message +"</p></li>");
+    socket.on('history', (room) => {
+        $('#messages').append(`<a href="${room}/<%= username %>"  <li>  <p class='message' > ${room}</p></li></a>`);
 
     })
-    socket.on('message', (username , message) => {
-      // $('#messages').append($('<li class="">').text(username));
-        $('#messages').append("<li > <p class='username'>"+ username +"</p> <p class='message' > "+ message +"</p></li>");
-        
-    })
-  
+
   </script>
 </body>
 

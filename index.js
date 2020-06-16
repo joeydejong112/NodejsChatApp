@@ -29,39 +29,65 @@ const pool = new Pool({
 
 
 
+// pool.query("DROP TABLE rooms", (err, res) => {
+//     console.log(err, res)
+//   })
+// pool.query("CREATE TABLE roomstest (id SERIAL, name VARCHAR(255))", (err, res) => {
+//   console.log(err, res)
+// })
+
+// pool.query(`INSERT INTO rooms (name) VALUES ('javascript')
+// `, (err, res) => {
+//   console.log(err, res)
+// })
+
+
 
 
 // Routes
 app.get('/', (req, res) => {
 
-    res.sendFile(__dirname + '/public/index.html')
+    res.sendFile(__dirname + '/public/username.html')
 });
+app.get('/rooms/:uid', function testfn(req, res, next) {
+    var username = req.params.uid;
+            res.render(__dirname + '/public/room.html', {
+                username: username
+                })
+
+
+});
+
 
 //global chat room 
 
 var roomid = null;
 
-app.get('/room/:uid', function testfn(req, res, next) {
-var name = req.params.uid;
+app.get('/rooms/:uid/:username', function testfn(req, res, next) {
+    var room = req.params.uid;
+    var username = req.params.username;
 
-
-    res.render(__dirname + '/public/chat.html', {name:name})
-
+            res.render(__dirname + '/public/chat.html', {
+                room: room,
+                username : username
+                })
    
+
 });
 
 
 const room = io.of('/room');
 
 room.on('connection', (socket) => {
+
     socket.on('join', (data) => {
-    
+
         console.log(data);
 
         const sessionID = socket.id;
 
         socket.join(data.room)
-        room.in(data.room).emit('doei' , `${sessionID} joined ${data.room} room!`)
+        room.in(data.room).emit('doei', `${sessionID} joined ${data.room} room!`)
 
         // chat history private message
 
@@ -80,20 +106,24 @@ room.on('connection', (socket) => {
             }
         })
     })
+   
+
+ 
+
     socket.on('message', (data) => {
         const sessionID = socket.id;
 
         console.log(`message : ${data.msg}`);
-        room.in(data.room).emit('message', `${sessionID}`, `${data.msg}`);
+        room.in(data.room).emit('message', `${data.username}`, `${data.msg}`);
 
 
         //insert chat in database
 
         console.log(data)
         // console.log()
-      
 
-        var sql = `INSERT INTO chats (username, message, room) VALUES ('${sessionID}','${data.msg}','${data.room}')`;
+
+        var sql = `INSERT INTO chats (username, message, room) VALUES ('${data.username}','${data.msg}','${data.room}')`;
         // var sql = `INSERT INTO rooms (name) VALUES ('javascript')`;  
         pool.query(sql, (err, res) => {
             console.log(sql);
@@ -142,10 +172,10 @@ home.on('connection', (socket) => {
         })
     })
 
-  
+
 
     socket.on('disconnect', () => {
-      
+
     })
 })
 

@@ -24,41 +24,16 @@
 
     <div class="chat-position">
       <div class="chat">
-        <ul id="messages"></ul>
 
+      <form action="" id="formId" method="GET">
+          <input type="text" id="username">
+          <button type="submit"></button>
+      </form>
       </div>
  
     </div>
   
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -79,42 +54,25 @@
 
 
 
-    const room = 'homepage';
 
-    const socket = io('/homepage');
-    
     $('form').submit(() => {
-      let username = $('#doekrle').val();
-      var socketConnection = io.connect();
-      socketConnection.on('connect', function () {
-        const sessionID = socketConnection.socket.sessionid;
-      });
+      let username = $('#username').val();
 
+      // var socketConnection = io.connect();
+      // socketConnection.on('connect', function () {
+      //   const sessionID = socketConnection.socket.sessionid;
+      // });
 
-      socket.emit('message', {
-        msg,
-        room
-      });
+      $('#formId').attr('action', `rooms/${username}`);
+
      
-
     });
 
-    socket.on('connect', () => {
-
-      //socket id
-      socket.emit('join', {
-        room: room
-      });
-    })
-
-   
-    // chat history on socket session
-    socket.on('history', (room) => {
-        $('#messages').append("<a href='room/"+ room + "'><li> <p class='username'></p> <p class='message' > "+ room +"</p></li></a>");
-
-    })
-
+  
+  
+  
   </script>
+
 </body>
 
 </html>
