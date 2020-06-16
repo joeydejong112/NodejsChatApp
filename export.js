@@ -61,10 +61,10 @@
    port: process.env.SQL_PORT,
   })
 
-pool.query("CREATE TABLE chats_test2 (id SERIAL, username VARCHAR(255) , message VARCHAR(255),  room VARCHAR(255) , tijd TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)", (err, res) => {
+pool.query("CREATE TABLE chats (id SERIAL, username VARCHAR(255) , message VARCHAR(255),  room VARCHAR(255) , tijd TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)", (err, res) => {
     console.log(err, res)
   })
 
- pool.query("CREATE TABLE roomstest_2 (id SERIAL, name VARCHAR(255))", (err, res) => {
+ pool.query("CREATE TABLE rooms (id SERIAL, name VARCHAR(255))", (err, res) => {
    console.log(err, res)
  })
