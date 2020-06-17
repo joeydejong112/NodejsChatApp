@@ -1,0 +1,293 @@
+$extrasmall : 420px;
+$small : 600px;
+$medium : 768px;
+$large: 992px;
+$extralarge: 1200px;
+
+body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0px !important;
+    padding: 0px !important;
+
+    //Username.html
+    .wrapper {
+        @media only screen and (max-width: $large) {
+            background-color: #3C3C3C !important;
+
+
+        }
+        height: -webkit-fill-available;
+
+
+        .username_html {
+            @media only screen and (max-width: $large) {
+                background-color: #292929;
+
+
+            }
+
+
+            .align_top_balk {
+                height: 470px;
+
+                .top_balk {
+                    position: relative;
+                    z-index: 999;
+
+                    background-color: #1F1F1F;
+                    width: 100%;
+                    height: 141px;
+                    border-bottom-right-radius: 41px;
+                    border-bottom-left-radius: 41px;
+                    .width_p_balk{
+                        width: 50%;
+                        display: inline-block;
+                        
+                        
+                    }
+                    p {
+                        line-height: 141px;
+                        padding-left: 39px;
+                        font-size: 36px;
+                        color: white;
+
+                        @media only screen and (max-width: $large) {
+                            text-align: center;
+                            padding-left: 0px;
+
+                        }
+                        span{
+                            font-size: 20px;
+                            color: #707070;
+                        }
+                    }
+
+
+                }
+                .roomhtml{
+                    .rooms{
+                        background-color: #3E3E3E;
+                        height: 1050px;
+                        margin-top: -39px;
+                        .align_rooms{
+                            width: 375px;
+                            margin: 0 auto;
+                            height: 673px;
+                            margin-top: 72px;
+                            ul{
+                                padding: 0px!important;
+                            }
+                            .room{
+                                width: 100%;
+                                display: block;
+                                height: 48px;
+                                P{
+                                    font-family: Arial, Helvetica, sans-serif;
+                                    padding-top: 0px;
+                                    font-size: 22px;
+                                }
+                                .left{
+                                    font-weight: bold;
+                                    color: white;
+                                    height: 25px;
+                                    width: 50%;
+                                    display: inline-block;
+                                    float: left;
+                                }
+                                .right{
+                                    color: white;
+
+                                    height: 25px;
+
+                                    width: 50%;
+                                    text-align: right;
+                                    float: right;
+                                    span{
+                                        color: #5F5F5F;
+                                    }
+                                }
+                                .status{
+                                    color: #5F5F5F;
+                                    width: 100%;
+                                    height: 19px;
+                                    font-size: 17px;
+                                }
+                            }
+                        }
+                    }
+                    .chats{
+                        height: 692px;
+                        overflow: scroll;
+                        ul{
+                            padding: 0px;
+                        }
+                        li{
+                            width: 816px;
+                            border-bottom-left-radius: 20px;
+                            border-top-right-radius: 20px;
+                            border-top-left-radius: 20px;
+                            padding: 28px;
+                            float: left;
+                            min-height: 117px;
+                            height: auto;
+                            list-style: none;
+                            background-color: #2B2B2B;
+                            margin-top: 37px;
+                        }
+                        .mymessage{
+                            background-color: #007EF4;
+                            float: right;
+                        }
+                        p{
+                            color: white;
+                            height: auto;
+                            padding-top: 2px;
+                            margin-left: 1px;
+                          
+                          
+                        }
+                        .message{
+                            font-size: 19px;
+                            padding-top: 17px;
+                        }
+                        .username{
+                            font-size: 21px;
+                            span{
+                                font-weight: 300;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+                .align_input {
+                   
+                    .col-md-6 {
+                        height: 355px;
+
+                        @media only screen and (max-width: $large) {
+                            width: 100% !important;
+                            max-width: 100% !important;
+                            flex: none;
+                            display: block;
+                            background-color: #292929;
+                            height: auto;
+                            min-height: 319px;
+
+                        }
+                        @media only screen and (max-width: $extrasmall) {
+                            min-height: 319px;
+                            text-align: center;
+                            padding-left: 0px;
+                            padding-right: 0px;
+
+                        }
+
+                    }
+
+                    p {
+                        width: 64%;
+                        height: 100%;
+                        margin: 0 auto;
+                        /* line-height: 48px; */
+                        font-size: 33px;
+                        padding-top: 19%;
+
+                        @media only screen and (max-width: $extralarge) {
+
+                            font-size: 27px;
+
+
+                        }
+
+                        @media only screen and (max-width: $large) {
+                            font-size: 19px;
+                            padding-top: 0px;
+                            padding-left: 21px;
+                            color: #606060;
+
+
+                        }
+                    }
+
+                    form {
+
+
+                        margin: 0 auto;
+
+                        #formId {
+                            margin-top: 274px;
+                            margin-left: 40%;
+
+                            @media only screen and (max-width: $large) {
+                                margin-top: 0px;
+                                margin-left: 0px;
+                            }
+                        }
+
+
+
+
+
+
+                        .align_input_box {
+                            background-color: #3C3C3C !important;
+                            border-radius: 25px;
+                            width: 370px;
+
+                            @media only screen and (max-width: $large) {
+                                margin: 0 auto;
+                                margin-top: 167px;
+
+                            }
+
+                            input[type=text] {
+                                width: 80%;
+                                height: 54px;
+                                color: white;
+                                border: none;
+                                background-color: #3C3C3C !important;
+                                border-radius: 25px;
+
+                                padding: 20px;
+                                display: inline-block;
+
+
+
+                            }
+
+                            .submit {
+                                height: 54px;
+                                width: 14%;
+                                border-radius: 56px;
+                                background-color: #007EF4;
+                                color: white;
+                                float: right;
+                                font-size: 24px;
+                                margin-bottom: 4px;
+
+
+                            }
+                        }
+
+
+                    }
+                }
+
+            }
+
+
+            .bottom_balk {
+                width: 100%;
+                height: 107px;
+                border-top-right-radius: 41px;
+                border-top-left-radius: 41px;
+                position: fixed;
+                bottom: 0px;
+                background-color: #1F1F1F;
+
+            }
+
+        }
+    }
+}

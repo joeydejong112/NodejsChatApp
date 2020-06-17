@@ -13,3 +13,9 @@ client.query('SELECT * FROM chats').then(res => {
 }).finally(() => {
     client.end()
 });
+
+ user: 'postgres',
+    host: 'localhost',
+    database: 'chat',
+    password: 'joeydejong12',
+    port: 5432,

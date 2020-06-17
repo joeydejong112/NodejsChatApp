@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script src="https://kit.fontawesome.com/d24ca64b2d.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
     integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -13,24 +14,43 @@
 </head>
 
 <body>
-  <div class="container-fluid mar">
+  <div class="wrapper">
+    <div class="container-fluid username_html m-0 p-0">
+      <div class="row m-0">
+        <div class="col-md-12 align_top_balk m-0 p-0">
 
-    <div class="top-balk">
-      <div class="align-info">
-        <h1>Home</h1>
-        <h1><%= username %></h1>
-        <ul id="join"></ul>
+          <div class="top_balk">
+            <p class="width_p_balk">Chatrooms </p>
+
+          </div>
+
+          <div class="row m-0 p-0 align_input roomhtml">
+            <div class="col-md-4 rooms">
+              <div class="align_rooms">
+                <ul></ul>
+                <div class="room">
+                  <p class="left">Javascript Room</p>
+                  <p class="right">14<span><i class="fas fa-users"></i></span></p>
+                  <p class="status">Dont worry, Be Javascript</p>
+                </div>
+              </div>
+
+
+            </div>
+
+
+
+            <div class="col-md-8 chats">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bottom_balk m-0 p-0">
+        <div class="col-md-12">
+        </div>
       </div>
     </div>
-
-    <div class="chat-position">
-      <div class="chat">
-        <ul id="messages"></ul>
-
-      </div>
- 
-    </div>
-  
   </div>
 
 
@@ -77,13 +97,10 @@
   </script>
   <script src="/socket.io/socket.io.js"></script>
   <script>
+    const room = 'room';
 
+    const socket = io('/room');
 
-
-    const room = 'homepage';
-
-    const socket = io('/homepage');
-    
     $('form').submit(() => {
       let username = $('#doekrle').val();
       var socketConnection = io.connect();
@@ -96,7 +113,7 @@
         msg,
         room
       });
-     
+
 
     });
 
@@ -107,17 +124,22 @@
         room: room
       });
     })
-    socket.on('username', (room) => {
-        $('#messages').append("<a href='room/"+ room + "'><li> <p class='username'></p> <p class='message' > "+ room +"</p></li></a>");
-
-    })
-   
     // chat history on socket session
-    socket.on('history', (room) => {
-        $('#messages').append(`<a href="${room}/<%= username %>"  <li>  <p class='message' > ${room}</p></li></a>`);
+    socket.on('kamer', (room) => {
+      $('ul').append(`
+      <a href="/rooms/${room}/<%= username %>"
+      <li style="list-style: none;">
+      <div class="room">
+      <p class="left">${room}</p>
+      <p class="right">14<span><i class="fas fa-users"></i></span></p>
+      <p class="status">Dont worry, Be Javascript</p>
+      </div>
+      </li>
+      </a>
+      
+      `);
 
     })
-
   </script>
 </body>
 

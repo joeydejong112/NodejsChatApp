@@ -4,6 +4,9 @@
 <head>
   <title>Chatter</title>
   <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script src="https://kit.fontawesome.com/d24ca64b2d.js" crossorigin="anonymous"></script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
 
@@ -13,33 +16,53 @@
 </head>
 
 <body>
-  <div class="container-fluid mar">
+  <div class="wrapper">
+    <div class="container-fluid username_html m-0 p-0">
+      <div class="row m-0">
+        <div class="col-md-12 align_top_balk m-0 p-0">
 
-    <div class="top-balk">
-      <div class="align-info">
-        <h1><%= room %></h1>
-        <p id="test"><%= username %></p>
-        <ul id="join"></ul>
+          <div class="top_balk">
+            <p class="width_p_balk">Chatrooms <span><%= room %></span> </p>
+          </div>
+
+          <div class="row m-0 p-0 align_input roomhtml">
+            <div class="col-md-4 rooms">
+              <div class="align_rooms">
+                <ul></ul>
+                <div class="room">
+                  <p class="left">dummy placeholder</p>
+                  <p class="right">14<span><i class="fas fa-users"></i></span></p>
+                  <p class="status">Dont worry, Be Javascript</p>
+                </div>
+              </div>
+
+
+            </div>
+
+
+
+            <div class="col-md-8 chats">
+              <div id="messages"></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bottom_balk m-0 p-0">
+        <div class="col-md-12">
+          <form action="">
+            <div class="input-group">
+              <input id="m" autocomplete="off" type="text" class="form-control" placeholder="Message..."
+                aria-label="Message...">
+              <input type="hidden" id="user" value="<%= username %>">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="submit">Send</button>
+              </span>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-
-    <div class="chat-position">
-      <div class="chat">
-        <ul id="messages"></ul>
-
-      </div>
-  <form action="">
-      <div class="input-group">
-        <input id="m" autocomplete="off" type="text" class="form-control" placeholder="Message..."
-          aria-label="Message...">
-          <input type="hidden" id="user" value="<%= username %>">
-        <span class="input-group-btn">
-          <button class="btn btn-secondary" type="submit">Send</button>
-        </span>
-      </div>
-    </form>
-    </div>
-  
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -51,11 +74,8 @@
   </script>
   <script src="/socket.io/socket.io.js"></script>
   <script>
-
-
-
     const room = '<%= room %>';
-
+    username = "<%= username %>";
     const socket = io('/room');
 
     $('form').submit(() => {
@@ -85,7 +105,8 @@
 
 
       socket.emit('join', {
-        room: room
+        room: room,
+        username: username
       });
     })
 
@@ -95,18 +116,64 @@
 
 
     })
-    // chat history on socket session
-    socket.on('history', (username , message) => {
-      // $('#messages').append($('<li class="">').text(username));
-        $('#messages').append("<li> <p class='username'>"+ username +"</p> <p class='message' > "+ message +"</p></li>");
+    // chat rooms
+    socket.on('kamer', (room) => {
+      $('ul').append(`
+      <a href="/rooms/${room}/<%= username %>"
+      <li style="list-style: none;">
+      <div class="room">
+      <p class="left">${room}</p>
+      <p class="right">14<span><i class="fas fa-users"></i></span></p>
+      <p class="status">Dont worry, Be Javascript</p>
+      </div>
+      </li>
+      </a>
+      
+      `);
 
     })
-    socket.on('message', (username , message) => {
+   
+    // chat history on socket session
+    socket.on('history', (username, message) => {
       // $('#messages').append($('<li class="">').text(username));
-        $('#messages').append("<li > <p class='username'>"+ username +"</p> <p class='message' > "+ message +"</p></li>");
-        
+      $('#messages').append("<li> <p class='username'>" + username +
+        " <span> said @ </span></p> <p class='message' > " + message + "</p></li>");
+
     })
-  
+    socket.on('message', (username, message) => {
+      // $('#messages').append($('<li class="">').text(username));
+      $('#messages').append("<li class='mymessage'> <p class='username'>" + username +
+        "</p> <p class='message' > " + message + "</p></li>");
+      //scroll to new message
+      var height = 1000;
+      $('div p').each(function (i, value) {
+        height += parseInt($(this).height());
+
+
+      });
+
+      height += '';
+
+      $('div').animate({
+        scrollTop: height
+      });
+    })
+    //timeout
+    setTimeout(scrolltoview, 1000);
+
+    //scroll to last message
+    function scrolltoview() {
+      var height = 1000;
+      $('div p').each(function (i, value) {
+        height += parseInt($(this).height());
+      });
+
+      height += '';
+
+      $('div').animate({
+        scrollTop: height
+      });
+    }
   </script>
 </body>
 

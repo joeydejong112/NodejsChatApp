@@ -18,11 +18,11 @@ const {
     Client
 } = require('pg')
 const pool = new Pool({
-    user: process.env.SQL_USER,
-    host: process.env.SQL_HOST,
-    database: process.env.SQL_DATABASE,
-    password: process.env.SQL_PASSWORD,
-    port: process.env.SQL_PORT,
+    user: 'postgres',
+    host: 'localhost',
+    database: 'chat',
+    password: 'joeydejong12',
+    port: 5432,
 })
 
 
@@ -81,11 +81,11 @@ const room = io.of('/room');
 room.on('connection', (socket) => {
 
     socket.on('join', (data) => {
+        username = data.username;
+      
 
-        console.log(data);
 
         const sessionID = socket.id;
-
         socket.join(data.room)
         room.in(data.room).emit('doei', `${sessionID} joined ${data.room} room!`)
 
@@ -99,8 +99,22 @@ room.on('connection', (socket) => {
             } else {
                 const data = res.rows;
                 data.forEach(row => {
-
+                   
                     room.to(sessionID).emit('history', `${row.username}`, ` ${row.message}`);
+
+                })
+            }
+        })
+        pool.query("SELECT * FROM rooms", (err, res) => {
+            if (err) {
+                console.log(err.stack)
+            } else {
+
+                const data = res.rows;
+                data.forEach(row => {
+                    console.log(row);
+                    room.to(sessionID).emit('kamer', `${row.name}`);
+                    console.log(row.name);
 
                 })
             }
@@ -139,45 +153,6 @@ room.on('connection', (socket) => {
 
 
 //end global chat
-
-//home page section
-const home = io.of('/homepage');
-
-
-home.on('connection', (socket) => {
-    console.log('user conntected');
-
-    socket.on('join', (data) => {
-        const sessionID = socket.id;
-
-        socket.join(data.room)
-        // home.in(data.room).emit('doei' , `${sessionID} joined ${data.room} room!`)
-
-        // chat history private message
-
-
-        pool.query("SELECT * FROM rooms", (err, res) => {
-            if (err) {
-                console.log(err.stack)
-            } else {
-
-                const data = res.rows;
-                data.forEach(row => {
-                    console.log(row);
-                    home.to(sessionID).emit('history', `${row.name}`);
-                    console.log(row.name);
-
-                })
-            }
-        })
-    })
-
-
-
-    socket.on('disconnect', () => {
-
-    })
-})
 
 
 

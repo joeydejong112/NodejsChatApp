@@ -6,35 +6,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-    integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/d24ca64b2d.js" crossorigin="anonymous"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 </head>
 
 <body>
-  <div class="container-fluid mar">
+  <div class="wrapper">
+    <div class="container-fluid username_html m-0 p-0">
+      <div class="row m-0">
+        <div class="col-md-12 align_top_balk m-0 p-0">
 
-    <div class="top-balk">
-      <div class="align-info">
-        <h1>Home</h1>
-        <ul id="join"></ul>
+          <div class="top_balk">
+            <p>Enter chatbox</p>
+          </div>
+
+          <div class="row m-0 p-0 align_input ">
+            <div class="col-md-6">
+              <!-- <form action="" id="formId" method="GET">
+            <input type="text" id="username" class="form-control" required>
+            <button type="submit"></button>
+          </form> -->
+
+              <form action="" id="form">
+                <div class="form-group" id="formId">
+                  <div class="align_input_box">
+                    <input type="text" class="form-control" id="username" a placeholder="Nickname">
+                    <button type="submit" class="btn submit"><i class="fas fa-sign-in-alt"></i></button>
+                  </div>
+
+
+                </div>
+
+              </form>
+            </div>
+            <div class="col-md-6">
+              <p>Here’s some information about this chat.
+                Could be anything actually. Like, it’s soo
+                cool! Oh my god, it’s amazing! Nothing
+                beats this chat. Like, you can talk and
+                other people talk back at ya! </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bottom_balk m-0 p-0">
+        <div class="col-md-12">
+        </div>
       </div>
     </div>
-
-    <div class="chat-position">
-      <div class="chat">
-
-      <form action="" id="formId" method="GET">
-          <input type="text" id="username">
-          <button type="submit"></button>
-      </form>
-      </div>
- 
-    </div>
-  
   </div>
-
 
 
 
@@ -51,10 +73,6 @@
   </script>
   <script src="/socket.io/socket.io.js"></script>
   <script>
-
-
-
-
     $('form').submit(() => {
       let username = $('#username').val();
 
@@ -63,14 +81,10 @@
       //   const sessionID = socketConnection.socket.sessionid;
       // });
 
-      $('#formId').attr('action', `rooms/${username}`);
+      $('#form').attr('action', `rooms/${username}`);
 
-     
+
     });
-
-  
-  
-  
   </script>
 
 </body>

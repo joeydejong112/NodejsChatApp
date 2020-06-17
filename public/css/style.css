@@ -1,83 +1,186 @@
-* {
-    padding: 0px;
-    margin: 0px;
-    color: white;
-}
-::-webkit-scrollbar-track {
-    width: 0px!important;
-  }
-  ::-webkit-scrollbar {
-    width: 0px!important;
-  }
 body {
-    height: -webkit-fill-available;
-    overflow: hidden;
-    background-color: #292929 !important;
-
-}
-form{
-position: fixed;
-bottom: 0;
-}
-#join{
-    font-size: 12px;
-    overflow-y: auto;
-    width: 100%;
-    height: 19px;
-}
-.align-info{
-    width: 396px;
-    height: 100%;
-    border: 1px solid red;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 30px;
-}
-.mar {
-    padding: 0px !important;
-    margin: 0px !important;
-}
-.chat-position{
-    margin: 0 auto;
-    width: 350px;
-}
-.chat{
-    width: 100%;
-    overflow: scroll;
-    height: 746px;
-
-}
-.chat ul {
-    margin-top: 0;
-    text-decoration: none;
-    margin-bottom: 1rem;
-    list-style: none;
-}
-
-.chat li {
-    padding-left: 20px;
-    padding-top: 15px;
-    width: 264px;
-    float: right;
-    min-height: 104px;
-    height: auto;
-    background-color: #007EF4!important;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-
-    margin-bottom: 20px;
-}
-.username{
-    margin-bottom: 17px!important;
-}
-
-
-
-.top-balk {
-    padding: 0px !important;
-    margin: 0px !important;
-    height: 120px;
-    width: 100%;
-    background-color: #1F1F1F !important;
-}
+  overflow: hidden;
+  height: 100%;
+  margin: 0px !important;
+  padding: 0px !important; }
+  body .wrapper {
+    height: -webkit-fill-available; }
+    @media only screen and (max-width: 992px) {
+      body .wrapper {
+        background-color: #3C3C3C !important; } }
+    @media only screen and (max-width: 992px) {
+      body .wrapper .username_html {
+        background-color: #292929; } }
+    body .wrapper .username_html .align_top_balk {
+      height: 470px; }
+      body .wrapper .username_html .align_top_balk .top_balk {
+        position: relative;
+        z-index: 999;
+        background-color: #1F1F1F;
+        width: 100%;
+        height: 141px;
+        border-bottom-right-radius: 41px;
+        border-bottom-left-radius: 41px; }
+        body .wrapper .username_html .align_top_balk .top_balk .width_p_balk {
+          width: 50%;
+          display: inline-block; }
+        body .wrapper .username_html .align_top_balk .top_balk p {
+          line-height: 141px;
+          padding-left: 39px;
+          font-size: 36px;
+          color: white; }
+          @media only screen and (max-width: 992px) {
+            body .wrapper .username_html .align_top_balk .top_balk p {
+              text-align: center;
+              padding-left: 0px; } }
+          body .wrapper .username_html .align_top_balk .top_balk p span {
+            font-size: 20px;
+            color: #707070; }
+      body .wrapper .username_html .align_top_balk .roomhtml .rooms {
+        background-color: #3E3E3E;
+        height: 1050px;
+        margin-top: -39px; }
+        body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms {
+          width: 375px;
+          margin: 0 auto;
+          height: 673px;
+          margin-top: 72px; }
+          body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms ul {
+            padding: 0px !important; }
+          body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms .room {
+            width: 100%;
+            display: block;
+            height: 48px; }
+            body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms .room P {
+              font-family: Arial, Helvetica, sans-serif;
+              padding-top: 0px;
+              font-size: 22px; }
+            body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms .room .left {
+              font-weight: bold;
+              color: white;
+              height: 25px;
+              width: 50%;
+              display: inline-block;
+              float: left; }
+            body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms .room .right {
+              color: white;
+              height: 25px;
+              width: 50%;
+              text-align: right;
+              float: right; }
+              body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms .room .right span {
+                color: #5F5F5F; }
+            body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms .room .status {
+              color: #5F5F5F;
+              width: 100%;
+              height: 19px;
+              font-size: 17px; }
+      body .wrapper .username_html .align_top_balk .roomhtml .chats {
+        height: 692px;
+        overflow: scroll; }
+        body .wrapper .username_html .align_top_balk .roomhtml .chats ul {
+          padding: 0px; }
+        body .wrapper .username_html .align_top_balk .roomhtml .chats li {
+          width: 816px;
+          border-bottom-left-radius: 20px;
+          border-top-right-radius: 20px;
+          border-top-left-radius: 20px;
+          padding: 28px;
+          float: left;
+          min-height: 117px;
+          height: auto;
+          list-style: none;
+          background-color: #2B2B2B;
+          margin-top: 37px; }
+        body .wrapper .username_html .align_top_balk .roomhtml .chats .mymessage {
+          background-color: #007EF4;
+          float: right; }
+        body .wrapper .username_html .align_top_balk .roomhtml .chats p {
+          color: white;
+          height: auto;
+          padding-top: 2px;
+          margin-left: 1px; }
+        body .wrapper .username_html .align_top_balk .roomhtml .chats .message {
+          font-size: 19px;
+          padding-top: 17px; }
+        body .wrapper .username_html .align_top_balk .roomhtml .chats .username {
+          font-size: 21px; }
+          body .wrapper .username_html .align_top_balk .roomhtml .chats .username span {
+            font-weight: 300;
+            font-size: 16px; }
+      body .wrapper .username_html .align_top_balk .align_input .col-md-6 {
+        height: 355px; }
+        @media only screen and (max-width: 992px) {
+          body .wrapper .username_html .align_top_balk .align_input .col-md-6 {
+            width: 100% !important;
+            max-width: 100% !important;
+            flex: none;
+            display: block;
+            background-color: #292929;
+            height: auto;
+            min-height: 319px; } }
+        @media only screen and (max-width: 420px) {
+          body .wrapper .username_html .align_top_balk .align_input .col-md-6 {
+            min-height: 319px;
+            text-align: center;
+            padding-left: 0px;
+            padding-right: 0px; } }
+      body .wrapper .username_html .align_top_balk .align_input p {
+        width: 64%;
+        height: 100%;
+        margin: 0 auto;
+        /* line-height: 48px; */
+        font-size: 33px;
+        padding-top: 19%; }
+        @media only screen and (max-width: 1200px) {
+          body .wrapper .username_html .align_top_balk .align_input p {
+            font-size: 27px; } }
+        @media only screen and (max-width: 992px) {
+          body .wrapper .username_html .align_top_balk .align_input p {
+            font-size: 19px;
+            padding-top: 0px;
+            padding-left: 21px;
+            color: #606060; } }
+      body .wrapper .username_html .align_top_balk .align_input form {
+        margin: 0 auto; }
+        body .wrapper .username_html .align_top_balk .align_input form #formId {
+          margin-top: 274px;
+          margin-left: 40%; }
+          @media only screen and (max-width: 992px) {
+            body .wrapper .username_html .align_top_balk .align_input form #formId {
+              margin-top: 0px;
+              margin-left: 0px; } }
+        body .wrapper .username_html .align_top_balk .align_input form .align_input_box {
+          background-color: #3C3C3C !important;
+          border-radius: 25px;
+          width: 370px; }
+          @media only screen and (max-width: 992px) {
+            body .wrapper .username_html .align_top_balk .align_input form .align_input_box {
+              margin: 0 auto;
+              margin-top: 167px; } }
+          body .wrapper .username_html .align_top_balk .align_input form .align_input_box input[type=text] {
+            width: 80%;
+            height: 54px;
+            color: white;
+            border: none;
+            background-color: #3C3C3C !important;
+            border-radius: 25px;
+            padding: 20px;
+            display: inline-block; }
+          body .wrapper .username_html .align_top_balk .align_input form .align_input_box .submit {
+            height: 54px;
+            width: 14%;
+            border-radius: 56px;
+            background-color: #007EF4;
+            color: white;
+            float: right;
+            font-size: 24px;
+            margin-bottom: 4px; }
+    body .wrapper .username_html .bottom_balk {
+      width: 100%;
+      height: 107px;
+      border-top-right-radius: 41px;
+      border-top-left-radius: 41px;
+      position: fixed;
+      bottom: 0px;
+      background-color: #1F1F1F; }
