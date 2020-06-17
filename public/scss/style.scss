@@ -17,6 +17,7 @@ body {
 
 
         }
+
         height: -webkit-fill-available;
 
 
@@ -40,12 +41,72 @@ body {
                     height: 141px;
                     border-bottom-right-radius: 41px;
                     border-bottom-left-radius: 41px;
-                    .width_p_balk{
-                        width: 50%;
+
+                    .align_nav {
+                        width: 52%;
+                        height: 100%;
                         display: inline-block;
-                        
-                        
+                        float: right;
+
+                        .res {
+                            display: none;
+                            @media only screen and (max-width: $large) {
+display: block;
+                            }
+                        }
+
+                        .navbar {
+                            background-color: #1F1F1F !important;
+                            color: white !important;
+                            height: 100%;
+
+                            @media only screen and (max-width: $extralarge) {
+                                float: right;
+
+
+                            }
+
+                            .navbar-nav {
+                                .nav-item {
+                                    width: 143px;
+                                    height: 48px;
+                                    border-radius: 23px;
+                                    background-color: #1A78D1;
+                                    line-height: 32px;
+                                    /* padding-top: 24px; */
+                                    text-transform: uppercase;
+                                    text-align: left;
+                                    margin-right: 20px;
+                                    padding-left: 20px;
+
+                                }
+
+                                .active {
+                                    background-color: white;
+                                    color: black;
+                                }
+
+                                a {
+
+                                    color: white;
+
+                                    span {
+                                        float: right;
+                                        font-size: 19px;
+                                        padding-right: 14px;
+                                    }
+                                }
+                            }
+                        }
                     }
+
+                    .width_p_balk {
+                        width: 41%;
+                        display: inline-block;
+
+
+                    }
+
                     p {
                         line-height: 141px;
                         padding-left: 39px;
@@ -57,7 +118,8 @@ body {
                             padding-left: 0px;
 
                         }
-                        span{
+
+                        span {
                             font-size: 20px;
                             color: #707070;
                         }
@@ -65,64 +127,125 @@ body {
 
 
                 }
-                .roomhtml{
-                    .rooms{
+                .chathtml{
+                   
+                    .rooms {
                         background-color: #3E3E3E;
                         height: 1050px;
                         margin-top: -39px;
-                        .align_rooms{
+                        padding: 0px;
+                        
+                        @media only screen and (max-width: $extralarge) {
+                            // background-color: #3E3E3E;
+                            // height: 1050px;
+                            // margin-top: -39px;
+                            // width: 100%;
+                            // max-width: 100%;
+                            // flex: none;
+                            display: none;
+                        }
+
+                        .align_rooms {
                             width: 375px;
                             margin: 0 auto;
                             height: 673px;
                             margin-top: 72px;
-                            ul{
-                                padding: 0px!important;
+
+                            ul {
+                                padding: 0px !important;
                             }
-                            .room{
+
+                            .room {
                                 width: 100%;
                                 display: block;
                                 height: 48px;
-                                P{
+                                margin-bottom: 16px;
+
+
+                                P {
                                     font-family: Arial, Helvetica, sans-serif;
                                     padding-top: 0px;
                                     font-size: 22px;
                                 }
-                                .left{
+
+                                .left {
                                     font-weight: bold;
                                     color: white;
                                     height: 25px;
-                                    width: 50%;
+                                    width: 57%;
                                     display: inline-block;
                                     float: left;
                                 }
-                                .right{
+
+                                .right {
                                     color: white;
-
                                     height: 25px;
-
-                                    width: 50%;
-                                    text-align: right;
+                                    width: 24%;
+                                    /* padding-right: 17px; */
+                                    /* text-align: right; */
                                     float: right;
-                                    span{
+
+                                    span {
                                         color: #5F5F5F;
                                     }
                                 }
-                                .status{
+
+                                .status {
                                     color: #5F5F5F;
-                                    width: 100%;
-                                    height: 19px;
+                                    width: 98%;
+                                    display: inline-block;
+                                    /* display: none; */
+                                    height: 25px;
                                     font-size: 17px;
                                 }
                             }
                         }
                     }
-                    .chats{
-                        height: 692px;
+
+                    .chats {
+                        height: 600px;
                         overflow: scroll;
-                        ul{
+                        @media only screen and (max-width: $extralarge) {
+                            height: auto;
+                            max-height: 746px;
+                            max-width: 100%;
+                            overflow: scroll;
+                            width: 100%;
+                            flex: none;
+                            background-color: #292929;
+
+                            #doei_nav{
+                                position: fixed;
+                                display: block;
+                                z-index: 9999;
+                                width: 100%;
+                                a{
+                                    width: 100%;
+                                    line-height: 61px;
+                                    text-transform: uppercase;
+                                    height: 61px;
+                                    background-color: #007EF4
+                                    ;border: 1px solid black;
+                                    color: white;
+                                }
+                            }
+                        }
+                     
+
+                        ul {
                             padding: 0px;
                         }
-                        li{
+
+                        li {
+
+                            @media only screen and (max-width: $extralarge) {
+
+                            width: 54%;
+                            }
+                            @media only screen and (max-width: $large) {
+
+                                width: 100%;
+                            }
                             width: 816px;
                             border-bottom-left-radius: 20px;
                             border-top-right-radius: 20px;
@@ -135,33 +258,177 @@ body {
                             background-color: #2B2B2B;
                             margin-top: 37px;
                         }
-                        .mymessage{
+
+                        .mymessage {
                             background-color: #007EF4;
                             float: right;
                         }
-                        p{
+
+                        p {
                             color: white;
                             height: auto;
                             padding-top: 2px;
                             margin-left: 1px;
-                          
-                          
+
+
                         }
-                        .message{
+
+                        .message {
                             font-size: 19px;
                             padding-top: 17px;
                         }
-                        .username{
+
+                        .username {
                             font-size: 21px;
-                            span{
+
+                            span {
                                 font-weight: 300;
                                 font-size: 16px;
                             }
                         }
                     }
                 }
+                .roomhtml {
+                    .rooms {
+                        background-color: #3E3E3E;
+                        height: 1050px;
+                        margin-top: -39px;
+                        padding: 0px;
+                        
+                        @media only screen and (max-width: $extralarge) {
+                            background-color: #3E3E3E;
+                            height: 1050px;
+                            margin-top: -39px;
+                            width: 100%;
+                            max-width: 100%;
+                            flex: none;
+                        }
+
+                        .align_rooms {
+                            width: 375px;
+                            margin: 0 auto;
+                            height: 673px;
+                            margin-top: 72px;
+
+                            ul {
+                                padding: 0px !important;
+                            }
+
+                            .room {
+                                width: 100%;
+                                display: block;
+                                height: 48px;
+                                margin-bottom: 16px;
+
+
+                                P {
+                                    font-family: Arial, Helvetica, sans-serif;
+                                    padding-top: 0px;
+                                    font-size: 22px;
+                                }
+
+                                .left {
+                                    font-weight: bold;
+                                    color: white;
+                                    height: 25px;
+                                    width: 57%;
+                                    display: inline-block;
+                                    float: left;
+                                }
+
+                                .right {
+                                    color: white;
+                                    height: 25px;
+                                    width: 24%;
+                                    /* padding-right: 17px; */
+                                    /* text-align: right; */
+                                    float: right;
+
+                                    span {
+                                        color: #5F5F5F;
+                                    }
+                                }
+
+                                .status {
+                                    color: #5F5F5F;
+                                    width: 98%;
+                                    display: inline-block;
+                                    /* display: none; */
+                                    height: 25px;
+                                    font-size: 17px;
+                                }
+                            }
+                        }
+                    }
+
+                    .chats {
+                        height: 600px;
+                        overflow: scroll;
+
+                        ul {
+                            padding: 0px;
+                        }
+
+                        li {
+                            width: 816px;
+                            border-bottom-left-radius: 20px;
+                            border-top-right-radius: 20px;
+                            border-top-left-radius: 20px;
+                            padding: 28px;
+                            float: left;
+                            min-height: 117px;
+                            height: auto;
+                            list-style: none;
+                            background-color: #2B2B2B;
+                            margin-top: 37px;
+                        }
+
+                        .mymessage {
+                            background-color: #007EF4;
+                            float: right;
+                        }
+
+                        p {
+                            color: white;
+                            height: auto;
+                            padding-top: 2px;
+                            margin-left: 1px;
+
+
+                        }
+
+                        .message {
+                            font-size: 19px;
+                            padding-top: 17px;
+                        }
+
+                        .username {
+                            font-size: 21px;
+
+                            span {
+                                font-weight: 300;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+
                 .align_input {
-                   
+                    #doei{
+                        display: block;
+                        position: absolute;
+                        z-index: 9999;
+                        width: 100%;
+                        a{
+                            width: 100%;
+                            line-height: 61px;
+                            text-transform: uppercase;
+                            height: 61px;
+                            background-color: #007EF4
+                            ;border: 1px solid black;
+                            color: white;
+                        }
+                    }
                     .col-md-6 {
                         height: 355px;
 
@@ -175,6 +442,7 @@ body {
                             min-height: 319px;
 
                         }
+
                         @media only screen and (max-width: $extrasmall) {
                             min-height: 319px;
                             text-align: center;
@@ -286,7 +554,41 @@ body {
                 bottom: 0px;
                 background-color: #1F1F1F;
 
+                form {
+                    width: 50%;
+                    margin-right: 10%;
+                    float: right;
+
+                    .submit {
+                        height: 54px;
+                        width: 60px;
+                        border-radius: 56px;
+                        background-color: #007EF4;
+                        color: white;
+                        float: right;
+                        font-size: 24px;
+                        margin-bottom: 4px;
+                        margin-top: 26px;
+                        margin-left: -66px;
+                        z-index: 9;
+                    }
+
+                    input[type=text] {
+                        width: 60%;
+                        height: 54px;
+                        margin-top: 26px;
+
+                        color: white;
+                        border: none;
+                        background-color: #3C3C3C !important;
+                        border-radius: 25px;
+
+                        padding: 20px;
+                        display: inline-block;
+                    }
+                }
             }
+
 
         }
     }

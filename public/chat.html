@@ -15,7 +15,7 @@
 
 </head>
 
-<body>
+<body onload="start()">
   <div class="wrapper">
     <div class="container-fluid username_html m-0 p-0">
       <div class="row m-0">
@@ -23,17 +23,37 @@
 
           <div class="top_balk">
             <p class="width_p_balk">Chatrooms <span><%= room %></span> </p>
+            <div class="align_nav">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <div class="res">
+
+              
+                  <span onclick="show()" id="show"  style="color:white"><i class="fas fa-bars"></i></span>
+                  <span onclick="dontshow()" id="dontshow" style="color:white"><i class="fas fa-bars"></i></span>
+  </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav ml-auto" >
+                    <a class="nav-item nav-link active" href="/rooms/<%= username %>">rooms <span></span></a>
+                    <a class="nav-item nav-link" href="#">users</a>
+                    <a class="nav-item nav-link" href="/">quit</a>
+                  </div>
+                </div>
+               
+              </nav>
+            </div>
           </div>
 
-          <div class="row m-0 p-0 align_input roomhtml">
+          <div class="row m-0 p-0 align_input chathtml">
             <div class="col-md-4 rooms">
               <div class="align_rooms">
                 <ul></ul>
-                <div class="room">
+                <!-- <div class="room">
                   <p class="left">dummy placeholder</p>
                   <p class="right">14<span><i class="fas fa-users"></i></span></p>
                   <p class="status">Dont worry, Be Javascript</p>
-                </div>
+                </div> -->
               </div>
 
 
@@ -42,6 +62,11 @@
 
 
             <div class="col-md-8 chats">
+              <div id="doei_nav" >
+                <a class="nav-item nav-link active" href="/rooms/<%= username %>">rooms <span></span></a>
+                <a class="nav-item nav-link" href="#">users<span></span></a>
+                <a class="nav-item nav-link" href="/">quit<span></span></a>
+              </div>
               <div id="messages"></div>
 
             </div>
@@ -55,9 +80,7 @@
               <input id="m" autocomplete="off" type="text" class="form-control" placeholder="Message..."
                 aria-label="Message...">
               <input type="hidden" id="user" value="<%= username %>">
-              <span class="input-group-btn">
-                <button class="btn btn-secondary" type="submit">Send</button>
-              </span>
+                <button type="submit" class="btn submit"><i class="fas fa-paper-plane"></i></button>
             </div>
           </form>
         </div>
@@ -133,19 +156,36 @@
 
     })
    
+    socket.on('empty', () => {
+      // $('#messages').append($('<li class="">').text(username));
+      $('#messages').append("<li class='mymessage'style='background-color:red;'> <p class='username'>Server Bot</p> <p class='message' > Message cant be empty</p></li>");
+      var height = 999999;
+      $('div p').each(function (i, value) {
+        height += parseInt($(this).height());
+
+
+      });
+
+      height += '';
+
+      $('div').animate({
+        scrollTop: height
+      });
+
+    })
+
     // chat history on socket session
     socket.on('history', (username, message) => {
       // $('#messages').append($('<li class="">').text(username));
       $('#messages').append("<li> <p class='username'>" + username +
-        " <span> said @ </span></p> <p class='message' > " + message + "</p></li>");
+        " <span> said  </span></p> <p class='message' > " + message + "</p></li>");
 
     })
     socket.on('message', (username, message) => {
       // $('#messages').append($('<li class="">').text(username));
-      $('#messages').append("<li class='mymessage'> <p class='username'>" + username +
-        "</p> <p class='message' > " + message + "</p></li>");
+      $('#messages').append("<li class='mymessage'> <p class='username'>You</p> <p class='message' > " + message + "</p></li>");
       //scroll to new message
-      var height = 1000;
+      var height = 999999;
       $('div p').each(function (i, value) {
         height += parseInt($(this).height());
 
@@ -159,11 +199,11 @@
       });
     })
     //timeout
-    setTimeout(scrolltoview, 1000);
+    setTimeout(scrolltoview, 250);
 
     //scroll to last message
     function scrolltoview() {
-      var height = 1000;
+      var height = 99999;
       $('div p').each(function (i, value) {
         height += parseInt($(this).height());
       });
@@ -173,6 +213,28 @@
       $('div').animate({
         scrollTop: height
       });
+    }
+    function start(){
+  document.getElementById("show").style.display = "block";
+  document.getElementById("dontshow").style.display = "none";
+
+      document.getElementById("doei_nav").style.display = "none";
+
+}
+    function show(){
+      document.getElementById("dontshow").style.display = "block";
+      document.getElementById("show").style.display = "none";
+
+      document.getElementById("doei_nav").style.display = "block";
+
+    }
+
+    function dontshow(){
+      document.getElementById("show").style.display = "block";
+      document.getElementById("doei_nav").style.display = "none";
+      document.getElementById("dontshow").style.display = "none";
+
+
     }
   </script>
 </body>

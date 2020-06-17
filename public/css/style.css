@@ -21,8 +21,45 @@ body {
         height: 141px;
         border-bottom-right-radius: 41px;
         border-bottom-left-radius: 41px; }
+        body .wrapper .username_html .align_top_balk .top_balk .align_nav {
+          width: 52%;
+          height: 100%;
+          display: inline-block;
+          float: right; }
+          body .wrapper .username_html .align_top_balk .top_balk .align_nav .res {
+            display: none; }
+            @media only screen and (max-width: 992px) {
+              body .wrapper .username_html .align_top_balk .top_balk .align_nav .res {
+                display: block; } }
+          body .wrapper .username_html .align_top_balk .top_balk .align_nav .navbar {
+            background-color: #1F1F1F !important;
+            color: white !important;
+            height: 100%; }
+            @media only screen and (max-width: 1200px) {
+              body .wrapper .username_html .align_top_balk .top_balk .align_nav .navbar {
+                float: right; } }
+            body .wrapper .username_html .align_top_balk .top_balk .align_nav .navbar .navbar-nav .nav-item {
+              width: 143px;
+              height: 48px;
+              border-radius: 23px;
+              background-color: #1A78D1;
+              line-height: 32px;
+              /* padding-top: 24px; */
+              text-transform: uppercase;
+              text-align: left;
+              margin-right: 20px;
+              padding-left: 20px; }
+            body .wrapper .username_html .align_top_balk .top_balk .align_nav .navbar .navbar-nav .active {
+              background-color: white;
+              color: black; }
+            body .wrapper .username_html .align_top_balk .top_balk .align_nav .navbar .navbar-nav a {
+              color: white; }
+              body .wrapper .username_html .align_top_balk .top_balk .align_nav .navbar .navbar-nav a span {
+                float: right;
+                font-size: 19px;
+                padding-right: 14px; }
         body .wrapper .username_html .align_top_balk .top_balk .width_p_balk {
-          width: 50%;
+          width: 41%;
           display: inline-block; }
         body .wrapper .username_html .align_top_balk .top_balk p {
           line-height: 141px;
@@ -36,10 +73,127 @@ body {
           body .wrapper .username_html .align_top_balk .top_balk p span {
             font-size: 20px;
             color: #707070; }
+      body .wrapper .username_html .align_top_balk .chathtml .rooms {
+        background-color: #3E3E3E;
+        height: 1050px;
+        margin-top: -39px;
+        padding: 0px; }
+        @media only screen and (max-width: 1200px) {
+          body .wrapper .username_html .align_top_balk .chathtml .rooms {
+            display: none; } }
+        body .wrapper .username_html .align_top_balk .chathtml .rooms .align_rooms {
+          width: 375px;
+          margin: 0 auto;
+          height: 673px;
+          margin-top: 72px; }
+          body .wrapper .username_html .align_top_balk .chathtml .rooms .align_rooms ul {
+            padding: 0px !important; }
+          body .wrapper .username_html .align_top_balk .chathtml .rooms .align_rooms .room {
+            width: 100%;
+            display: block;
+            height: 48px;
+            margin-bottom: 16px; }
+            body .wrapper .username_html .align_top_balk .chathtml .rooms .align_rooms .room P {
+              font-family: Arial, Helvetica, sans-serif;
+              padding-top: 0px;
+              font-size: 22px; }
+            body .wrapper .username_html .align_top_balk .chathtml .rooms .align_rooms .room .left {
+              font-weight: bold;
+              color: white;
+              height: 25px;
+              width: 57%;
+              display: inline-block;
+              float: left; }
+            body .wrapper .username_html .align_top_balk .chathtml .rooms .align_rooms .room .right {
+              color: white;
+              height: 25px;
+              width: 24%;
+              /* padding-right: 17px; */
+              /* text-align: right; */
+              float: right; }
+              body .wrapper .username_html .align_top_balk .chathtml .rooms .align_rooms .room .right span {
+                color: #5F5F5F; }
+            body .wrapper .username_html .align_top_balk .chathtml .rooms .align_rooms .room .status {
+              color: #5F5F5F;
+              width: 98%;
+              display: inline-block;
+              /* display: none; */
+              height: 25px;
+              font-size: 17px; }
+      body .wrapper .username_html .align_top_balk .chathtml .chats {
+        height: 600px;
+        overflow: scroll; }
+        @media only screen and (max-width: 1200px) {
+          body .wrapper .username_html .align_top_balk .chathtml .chats {
+            height: auto;
+            max-height: 746px;
+            max-width: 100%;
+            overflow: scroll;
+            width: 100%;
+            flex: none;
+            background-color: #292929; }
+            body .wrapper .username_html .align_top_balk .chathtml .chats #doei_nav {
+              position: fixed;
+              display: block;
+              z-index: 9999;
+              width: 100%; }
+              body .wrapper .username_html .align_top_balk .chathtml .chats #doei_nav a {
+                width: 100%;
+                line-height: 61px;
+                text-transform: uppercase;
+                height: 61px;
+                background-color: #007EF4;
+                border: 1px solid black;
+                color: white; } }
+        body .wrapper .username_html .align_top_balk .chathtml .chats ul {
+          padding: 0px; }
+        body .wrapper .username_html .align_top_balk .chathtml .chats li {
+          width: 816px;
+          border-bottom-left-radius: 20px;
+          border-top-right-radius: 20px;
+          border-top-left-radius: 20px;
+          padding: 28px;
+          float: left;
+          min-height: 117px;
+          height: auto;
+          list-style: none;
+          background-color: #2B2B2B;
+          margin-top: 37px; }
+          @media only screen and (max-width: 1200px) {
+            body .wrapper .username_html .align_top_balk .chathtml .chats li {
+              width: 54%; } }
+          @media only screen and (max-width: 992px) {
+            body .wrapper .username_html .align_top_balk .chathtml .chats li {
+              width: 100%; } }
+        body .wrapper .username_html .align_top_balk .chathtml .chats .mymessage {
+          background-color: #007EF4;
+          float: right; }
+        body .wrapper .username_html .align_top_balk .chathtml .chats p {
+          color: white;
+          height: auto;
+          padding-top: 2px;
+          margin-left: 1px; }
+        body .wrapper .username_html .align_top_balk .chathtml .chats .message {
+          font-size: 19px;
+          padding-top: 17px; }
+        body .wrapper .username_html .align_top_balk .chathtml .chats .username {
+          font-size: 21px; }
+          body .wrapper .username_html .align_top_balk .chathtml .chats .username span {
+            font-weight: 300;
+            font-size: 16px; }
       body .wrapper .username_html .align_top_balk .roomhtml .rooms {
         background-color: #3E3E3E;
         height: 1050px;
-        margin-top: -39px; }
+        margin-top: -39px;
+        padding: 0px; }
+        @media only screen and (max-width: 1200px) {
+          body .wrapper .username_html .align_top_balk .roomhtml .rooms {
+            background-color: #3E3E3E;
+            height: 1050px;
+            margin-top: -39px;
+            width: 100%;
+            max-width: 100%;
+            flex: none; } }
         body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms {
           width: 375px;
           margin: 0 auto;
@@ -50,7 +204,8 @@ body {
           body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms .room {
             width: 100%;
             display: block;
-            height: 48px; }
+            height: 48px;
+            margin-bottom: 16px; }
             body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms .room P {
               font-family: Arial, Helvetica, sans-serif;
               padding-top: 0px;
@@ -59,24 +214,27 @@ body {
               font-weight: bold;
               color: white;
               height: 25px;
-              width: 50%;
+              width: 57%;
               display: inline-block;
               float: left; }
             body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms .room .right {
               color: white;
               height: 25px;
-              width: 50%;
-              text-align: right;
+              width: 24%;
+              /* padding-right: 17px; */
+              /* text-align: right; */
               float: right; }
               body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms .room .right span {
                 color: #5F5F5F; }
             body .wrapper .username_html .align_top_balk .roomhtml .rooms .align_rooms .room .status {
               color: #5F5F5F;
-              width: 100%;
-              height: 19px;
+              width: 98%;
+              display: inline-block;
+              /* display: none; */
+              height: 25px;
               font-size: 17px; }
       body .wrapper .username_html .align_top_balk .roomhtml .chats {
-        height: 692px;
+        height: 600px;
         overflow: scroll; }
         body .wrapper .username_html .align_top_balk .roomhtml .chats ul {
           padding: 0px; }
@@ -108,6 +266,19 @@ body {
           body .wrapper .username_html .align_top_balk .roomhtml .chats .username span {
             font-weight: 300;
             font-size: 16px; }
+      body .wrapper .username_html .align_top_balk .align_input #doei {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        width: 100%; }
+        body .wrapper .username_html .align_top_balk .align_input #doei a {
+          width: 100%;
+          line-height: 61px;
+          text-transform: uppercase;
+          height: 61px;
+          background-color: #007EF4;
+          border: 1px solid black;
+          color: white; }
       body .wrapper .username_html .align_top_balk .align_input .col-md-6 {
         height: 355px; }
         @media only screen and (max-width: 992px) {
@@ -184,3 +355,29 @@ body {
       position: fixed;
       bottom: 0px;
       background-color: #1F1F1F; }
+      body .wrapper .username_html .bottom_balk form {
+        width: 50%;
+        margin-right: 10%;
+        float: right; }
+        body .wrapper .username_html .bottom_balk form .submit {
+          height: 54px;
+          width: 60px;
+          border-radius: 56px;
+          background-color: #007EF4;
+          color: white;
+          float: right;
+          font-size: 24px;
+          margin-bottom: 4px;
+          margin-top: 26px;
+          margin-left: -66px;
+          z-index: 9; }
+        body .wrapper .username_html .bottom_balk form input[type=text] {
+          width: 60%;
+          height: 54px;
+          margin-top: 26px;
+          color: white;
+          border: none;
+          background-color: #3C3C3C !important;
+          border-radius: 25px;
+          padding: 20px;
+          display: inline-block; }

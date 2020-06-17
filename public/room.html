@@ -13,7 +13,7 @@
 
 </head>
 
-<body>
+<body onload="start()">
   <div class="wrapper">
     <div class="container-fluid username_html m-0 p-0">
       <div class="row m-0">
@@ -21,12 +21,36 @@
 
           <div class="top_balk">
             <p class="width_p_balk">Chatrooms </p>
+            <div class="align_nav">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <div class="res">
 
+              
+                  <span onclick="show()" id="show"  style="color:white"><i class="fas fa-bars"></i></span>
+                  <span onclick="dontshow()" id="dontshow" style="color:white"><i class="fas fa-bars"></i></span>
+  </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav ml-auto" >
+                    <a class="nav-item nav-link active" href="/rooms/<%= username %>">rooms <span></span></a>
+                    <a class="nav-item nav-link" href="#">users</a>
+                    <a class="nav-item nav-link" href="/">quit</a>
+                  </div>
+                </div>
+               
+              </nav>
+            </div>
           </div>
 
           <div class="row m-0 p-0 align_input roomhtml">
-            <div class="col-md-4 rooms">
+            <div class="col-md-4 rooms"> <div id="doei" >
+                  <a class="nav-item nav-link active" href="/rooms/<%= username %>">rooms <span></span></a>
+                  <a class="nav-item nav-link" href="#">users<span></span></a>
+                  <a class="nav-item nav-link" href="/">quit<span></span></a>
+                </div>
               <div class="align_rooms">
+               
                 <ul></ul>
                 <div class="room">
                   <p class="left">Javascript Room</p>
@@ -140,6 +164,28 @@
       `);
 
     })
+function start(){
+  document.getElementById("show").style.display = "block";
+  document.getElementById("dontshow").style.display = "none";
+
+      document.getElementById("doei").style.display = "none";
+
+}
+    function show(){
+      document.getElementById("dontshow").style.display = "block";
+      document.getElementById("show").style.display = "none";
+
+      document.getElementById("doei").style.display = "block";
+
+    }
+
+    function dontshow(){
+      document.getElementById("show").style.display = "block";
+      document.getElementById("doei").style.display = "none";
+      document.getElementById("dontshow").style.display = "none";
+
+
+    }
   </script>
 </body>
 

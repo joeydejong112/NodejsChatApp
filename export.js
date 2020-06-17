@@ -68,3 +68,20 @@ pool.query("CREATE TABLE chats (id SERIAL, username VARCHAR(255) , message VARCH
  pool.query("CREATE TABLE rooms (id SERIAL, name VARCHAR(255))", (err, res) => {
    console.log(err, res)
  })
+
+ pool.query(`INSERT INTO rooms (name) VALUES ('Chillout place')
+`, (err, res) => {
+  console.log(err, res)
+})
+pool.query(`INSERT INTO rooms (name) VALUES ('Nightlife')
+`, (err, res) => {
+  console.log(err, res)
+})
+pool.query(`INSERT INTO rooms (name) VALUES ('Series & movies')
+`, (err, res) => {
+  console.log(err, res)
+})
+pool.query(`INSERT INTO rooms (name) VALUES ('Sports')
+`, (err, res) => {
+  console.log(err, res)
+})

@@ -19,10 +19,10 @@ const {
 } = require('pg')
 const pool = new Pool({
     user: process.env.SQL_USER,
-   host: process.env.SQL_HOST,
-   database: process.env.SQL_DATABASE,
-   password: process.env.SQL_PASSWORD,
-   port: process.env.SQL_PORT,
+    host: process.env.SQL_HOST,
+    database: process.env.SQL_DATABASE,
+    password: process.env.SQL_PASSWORD,
+    port: process.env.SQL_PORT,
 })
 
 
@@ -40,7 +40,10 @@ const pool = new Pool({
 // `, (err, res) => {
 //   console.log(err, res)
 // })
-
+// pool.query(`INSERT INTO rooms (name) VALUES ('Chillout place')
+// `, (err, res) => {
+//   console.log(err, res)
+// })
 
 
 
@@ -128,21 +131,27 @@ room.on('connection', (socket) => {
         const sessionID = socket.id;
 
         console.log(`message : ${data.msg}`);
-        room.in(data.room).emit('message', `${data.username}`, `${data.msg}`);
+        
+        if(data.msg === ''){
+            room.to(sessionID).emit('empty');
+
+        }else{
+                room.in(data.room).emit('message', `${data.username}`, `${data.msg}`);
+      //insert chat in database
+
+      console.log(data)
+      // console.log()
 
 
-        //insert chat in database
+      var sql = `INSERT INTO chats (username, message, room) VALUES ('${data.username}','${data.msg}','${data.room}')`;
+      // var sql = `INSERT INTO rooms (name) VALUES ('javascript')`;  
+      pool.query(sql, (err, res) => {
+          console.log(sql);
+          console.log(res);
+      })
+        }
 
-        console.log(data)
-        // console.log()
-
-
-        var sql = `INSERT INTO chats (username, message, room) VALUES ('${data.username}','${data.msg}','${data.room}')`;
-        // var sql = `INSERT INTO rooms (name) VALUES ('javascript')`;  
-        pool.query(sql, (err, res) => {
-            console.log(sql);
-            console.log(res);
-        })
+      
     });
 
     socket.on('disconnect', () => {
