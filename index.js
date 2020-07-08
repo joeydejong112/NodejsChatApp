@@ -32,9 +32,9 @@ const pool = new Pool({
 
 })
 
-// pool.query("DROP TABLE chats", (err, res) => {
-//     console.log(err, res)
-//   })
+pool.query("DROP TABLE chats", (err, res) => {
+    console.log(err, res)
+  })
 
 
 
