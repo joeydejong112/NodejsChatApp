@@ -1,8 +1,19 @@
 body {
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
   overflow: hidden;
   height: 100%;
   margin: 0px !important;
   padding: 0px !important; }
+  body ::-webkit-scrollbar {
+    width: 10px; }
+  body ::-webkit-scrollbar-track {
+    background: none; }
+  body ::-webkit-scrollbar-thumb {
+    background: #888; }
+  body ::-webkit-scrollbar-thumb:hover {
+    background: #555; }
   body .wrapper {
     background-color: #E3E3E3;
     height: 100vh; }
@@ -27,6 +38,9 @@ body {
           height: 100%;
           display: inline-block;
           float: right; }
+          @media only screen and (max-width: 768px) {
+            body .wrapper .username_html .align_top_balk .top_balk .align_nav {
+              width: auto; } }
           body .wrapper .username_html .align_top_balk .top_balk .align_nav .res {
             display: none; }
             @media only screen and (max-width: 992px) {
@@ -62,6 +76,9 @@ body {
         body .wrapper .username_html .align_top_balk .top_balk .width_p_balk {
           width: 41%;
           display: inline-block; }
+          @media only screen and (max-width: 768px) {
+            body .wrapper .username_html .align_top_balk .top_balk .width_p_balk {
+              width: auto; } }
         body .wrapper .username_html .align_top_balk .top_balk p {
           line-height: 101px;
           padding-left: 39px;
@@ -126,7 +143,7 @@ body {
         overflow: scroll; }
         @media only screen and (max-width: 1200px) {
           body .wrapper .username_html .align_top_balk .chathtml .chats {
-            height: auto;
+            height: calc(100vh - 196px);
             max-height: 746px;
             max-width: 100%;
             overflow: scroll;
@@ -137,7 +154,7 @@ body {
               position: fixed;
               display: block;
               z-index: 9999;
-              width: 100%; }
+              width: 92%; }
               body .wrapper .username_html .align_top_balk .chathtml .chats #doei_nav a {
                 width: 100%;
                 line-height: 61px;
@@ -154,7 +171,7 @@ body {
           border-top-right-radius: 20px;
           border-top-left-radius: 20px;
           padding: 28px;
-          float: left;
+          float: right;
           min-height: 117px;
           height: auto;
           list-style: none;
@@ -361,6 +378,11 @@ body {
         width: 50%;
         margin-right: 10%;
         float: right; }
+        @media only screen and (max-width: 1200px) {
+          body .wrapper .username_html .bottom_balk form {
+            width: 100%;
+            margin: 0px;
+            float: none; } }
         body .wrapper .username_html .bottom_balk form .submit {
           height: 54px;
           width: 60px;

@@ -28,19 +28,19 @@
                 <!-- <a class="navbar-brand" href="#">Navbar</a> -->
                 <div class="res">
 
-              
-                  <span onclick="show()" id="show"  style="color:white"><i class="fas fa-bars"></i></span>
+
+                  <span onclick="show()" id="show" style="color:white"><i class="fas fa-bars"></i></span>
                   <span onclick="dontshow()" id="dontshow" style="color:white"><i class="fas fa-bars"></i></span>
-  </div>
+                </div>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav ml-auto" >
+                  <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link active" href="/rooms/<%= username %>">rooms <span></span></a>
                     <a class="nav-item nav-link" href="#">users</a>
                     <a class="nav-item nav-link" href="/">quit</a>
                   </div>
                 </div>
-               
+
               </nav>
             </div>
           </div>
@@ -62,7 +62,7 @@
 
 
             <div class="col-md-8 chats">
-              <div id="doei_nav" >
+              <div id="doei_nav">
                 <a class="nav-item nav-link active" href="/rooms/<%= username %>">rooms <span></span></a>
                 <a class="nav-item nav-link" href="#">users<span></span></a>
                 <a class="nav-item nav-link" href="/">quit<span></span></a>
@@ -75,13 +75,13 @@
       </div>
       <div class="row bottom_balk m-0 p-0">
         <div class="col-md-12">
-          <form action="">
-            <div class="input-group">
-              <input id="m" autocomplete="off" type="text" class="form-control" placeholder="Message..."
-                aria-label="Message...">
-              <input type="hidden" id="user" value="<%= username %>">
+            <form action="">
+              <div class="input-group">
+                <input id="m" autocomplete="off" type="text" class="form-control" placeholder="Message..."
+                  aria-label="Message...">
+                <input type="hidden" id="user" value="<%= username %>">
                 <button type="submit" class="btn submit"><i class="fas fa-paper-plane"></i></button>
-            </div>
+          </div>
           </form>
         </div>
       </div>
@@ -155,10 +155,12 @@
       `);
 
     })
-   
+
     socket.on('empty', () => {
       // $('#messages').append($('<li class="">').text(username));
-      $('#messages').append("<li class='mymessage'style='background-color:red;'> <p class='username'>Server Bot</p> <p class='message' > Message cant be empty</p></li>");
+      $('#messages').append(
+        "<li class='mymessage'style='background-color:red;'> <p class='username'>Server Bot</p> <p class='message' > Message cant be empty</p></li>"
+        );
       var height = 999999;
       $('div p').each(function (i, value) {
         height += parseInt($(this).height());
@@ -215,14 +217,16 @@
         scrollTop: height
       });
     }
-    function start(){
-  document.getElementById("show").style.display = "block";
-  document.getElementById("dontshow").style.display = "none";
+
+    function start() {
+      document.getElementById("show").style.display = "block";
+      document.getElementById("dontshow").style.display = "none";
 
       document.getElementById("doei_nav").style.display = "none";
 
-}
-    function show(){
+    }
+
+    function show() {
       document.getElementById("dontshow").style.display = "block";
       document.getElementById("show").style.display = "none";
 
@@ -230,7 +234,7 @@
 
     }
 
-    function dontshow(){
+    function dontshow() {
       document.getElementById("show").style.display = "block";
       document.getElementById("doei_nav").style.display = "none";
       document.getElementById("dontshow").style.display = "none";

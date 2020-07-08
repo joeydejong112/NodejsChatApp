@@ -6,9 +6,8 @@
   "scripts": {
     "start": "nodemon ./index.js --exec",
     "start-dev": "nodemon ./index.js --exec babel-node -e js",
-    "export_ad": "nodemon ./export.js"   , 
+    "export_ad": "nodemon ./export.js",
     "scss": "node-sass --watch ./public/scss -o ./public/css"
-
   },
   "author": "Joey",
   "license": "ISC",
@@ -20,11 +19,12 @@
     "pg": "^8.2.1",
     "pgtools": "^0.3.0",
     "socket.io": "^2.3.0"
-
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2"
   }
 }
