@@ -6,7 +6,8 @@ const io = require('socket.io')(server);
 const port = process.env.PORT || 3000;
 
 
-
+var helmet = require('helmet')
+app.use(helmet())
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.set('views', __dirname);
@@ -22,29 +23,18 @@ const pool = new Pool({
     host: process.env.SQL_HOST,
     database: process.env.SQL_DATABASE,
     password: process.env.SQL_PASSWORD,
-    port: process.env.SQL_PORT,
-   
+    port: process.env.SQL_PORT
+    // user: 'postgres',
+    // host: 'localhost',
+    // database: 'chat',
+    // password: 'joeydejong12',
+    // port: 5432,
+
 })
 
-
-
-
-
-// pool.query("DROP TABLE rooms", (err, res) => {
-//     console.log(err, res)
-//   })
-// pool.query("CREATE TABLE roomstest (id SERIAL, name VARCHAR(255))", (err, res) => {
-//   console.log(err, res)
-// })
-
-// pool.query(`INSERT INTO rooms (name) VALUES ('javascript')
-// `, (err, res) => {
-//   console.log(err, res)
-// })
-// pool.query(`INSERT INTO rooms (name) VALUES ('Chillout place')
-// `, (err, res) => {
-//   console.log(err, res)
-// })
+pool.query("DROP TABLE chats", (err, res) => {
+    console.log(err, res)
+  })
 
 
 
