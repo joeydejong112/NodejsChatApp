@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon ./index.js --exec",
     "start-dev": "nodemon ./index.js --exec babel-node -e js",
+    "export_drop":"nodemon ./export_do.js",
     "export_ad": "nodemon ./export.js",
     "scss": "node-sass --watch ./public/scss -o ./public/css"
   },
