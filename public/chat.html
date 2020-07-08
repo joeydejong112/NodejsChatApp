@@ -183,7 +183,8 @@
     })
     socket.on('message', (username, message) => {
       // $('#messages').append($('<li class="">').text(username));
-      $('#messages').append("<li class='mymessage'> <p class='username'>You</p> <p class='message' > " + message + "</p></li>");
+      $('#messages').append("<li> <p class='username'>" + username +
+        " <span> said  </span></p> <p class='message' > " + message + "</p></li>");
       //scroll to new message
       var height = 999999;
       $('div p').each(function (i, value) {
