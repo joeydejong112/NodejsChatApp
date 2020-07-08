@@ -50,7 +50,10 @@ body {
 
             .align_top_balk {
                 height: 470px;
-
+               
+                .align_input{
+                    height:82vh ;
+                }
                 .top_balk {
                     position: relative;
                     z-index: 999;

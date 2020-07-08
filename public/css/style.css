@@ -25,6 +25,8 @@ body {
         background-color: #292929; } }
     body .wrapper .username_html .align_top_balk {
       height: 470px; }
+      body .wrapper .username_html .align_top_balk .align_input {
+        height: 82vh; }
       body .wrapper .username_html .align_top_balk .top_balk {
         position: relative;
         z-index: 999;

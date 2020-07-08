@@ -24,17 +24,11 @@ const pool = new Pool({
     database: process.env.SQL_DATABASE,
     password: process.env.SQL_PASSWORD,
     port: process.env.SQL_PORT
-    // user: 'postgres',
-    // host: 'localhost',
-    // database: 'chat',
-    // password: 'joeydejong12',
-    // port: 5432,
+ 
 
 })
 
-// pool.query("DROP TABLE chats", (err, res) => {
-//     console.log(err, res)
-//   })
+
 
 
 
